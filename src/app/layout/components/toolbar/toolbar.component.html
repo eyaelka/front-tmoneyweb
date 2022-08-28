@@ -1,0 +1,81 @@
+<mat-toolbar class="p-0 mat-elevation-z1">
+
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="space-around center" style="    box-shadow: 0px 6px 20px 20px #d3d3d3;
+    height: -4px;
+    background-color: #F5F5F5;">
+
+        <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <button mat-icon-button class="navbar-toggle-button"
+                    *ngIf="!hiddenNavbar && !rightNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
+            <div class="toolbar-separator" *ngIf="!hiddenNavbar && !rightNavbar" fxHide.gt-md></div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" *ngIf="horizontalNavbar">
+                <div class="logo ml-16">
+                    <img class="logo-icon" src="assets/images/logos/fuse.svg">
+                </div>
+            </div>
+            <div  fxLayout="row" fxLayoutAlign="center center" style=" padding-left: 3em;
+            padding-right: 8em;">
+            <button mat-button style="width: 11em;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: -1px 2px 20px 0px #9e9e9e;
+            height: 3em;">
+               
+                <span style="font-size: 20px;font-weight: bold;font-family: Segoe ;color:#989898;">{{3000 | currency}}</span>
+             </button>
+            </div>
+        </div>
+
+        <div class="" fxFlex="0 1 auto"  fxLayout="row" fxLayoutAlign="space-around center">
+
+            <button mat-button >
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <img style="background-color: #9e9e9e29;" class="avatar mr-0 mr-sm-16" src="assets/images/1.svg">
+                    <span style="font-size: 20px;font-weight: bold;font-family: Segoe ;color:#989898;" class="username mr-12" fxHide fxShow.gt-sm>Charlie Adams</span>
+                </div>
+            </button>
+
+    
+
+            <div  fxLayout="row" fxLayoutAlign="center center" style=" padding-left: 3em;
+            padding-right: 8em;">
+                <button mat-button>
+                    <mat-icon style="color:#989898;">exit_to_app</mat-icon>
+                    <span style="font-size: 20px;font-weight: bold;font-family: Segoe ;color:#989898;">Logout</span>
+                 </button>
+              
+            </div>
+          
+
+           
+
+
+
+
+            <button mat-icon-button fxHide.gt-md
+                    class="chat-panel-toggle-button"
+                    (click)="toggleSidebarOpen('chatPanel')"
+                    aria-label="Toggle chat panel">
+                <mat-icon class="secondary-text">chat</mat-icon>
+            </button>
+
+            <div class="toolbar-separator" fxHide.gt-md></div>
+
+
+            <div class="toolbar-separator" *ngIf="!hiddenNavbar && rightNavbar" fxHide fxShow.gt-xs></div>
+
+            <button mat-icon-button class="navbar-toggle-button"
+                    *ngIf="!hiddenNavbar && rightNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
+        </div>
+
+    </div>
+
+</mat-toolbar>

@@ -1,0 +1,275 @@
+<div id="dashboard-analytics" class="page-layout blank">
+
+ 
+
+    <div class="content">
+
+        <div class="left mr-lg-32">
+
+
+            <div fxLayout="column" fxLayoutAlign="start" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-around start">
+
+                <!-- Widget 2 -->
+                <div class="widget" fxFlex="100" fxFlex.gt-sm="33" >
+
+                    <div class="fuse-card auto-width mb-32" [ngClass.gt-sm]="'mb-0 mr-32'" style="border-radius: 2em;" >
+
+                        <div class="p-16 pb-0 h-200 w-100-p" fxLayout="column wrap" fxLayoutAlign="space-around center">
+                            <div class="h3 secondary-text" style="    font-family: Segoe UI;
+                            font-size: 21px;
+                            font-weight: bold;color: #5A5757;">Conversion</div>
+                       
+
+                            <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
+                                <div class="pr-16">
+                                
+                                    <div class="font-size-54 font-weight-300 line-height-1 mt-8">
+                                        {{widgets.widget2.conversion.value}}
+                                    </div>
+                                </div>
+                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg"
+                                     *ngIf="widgets.widget2.conversion.ofTarget > 0">
+                                    <mat-icon class="green-fg mr-4">trending_up</mat-icon>
+                                    <span>{{widgets.widget2.conversion.ofTarget}}%</span>
+                                </div>
+                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg"
+                                     *ngIf="widgets.widget2.conversion.ofTarget < 0">
+                                    <mat-icon class="red-fg mr-4">trending_down</mat-icon>
+                                    <span>{{widgets.widget2.conversion.ofTarget}}%</span>
+                                </div>
+                                <div class="ml-4 text-nowrap">of target</div>
+                            </div>
+
+                        </div>
+
+                    
+
+                    </div>
+
+                </div>
+                <!-- / Widget 2 -->
+
+                <!-- Widget 3 -->
+                <div class="widget" fxFlex="100" fxFlex.gt-sm="34">
+                    <div class="fuse-card auto-width mb-32" [ngClass.gt-sm]="'mb-0 mr-32'" style="border-radius: 2em;" >
+
+                        <div class="p-16 pb-0 h-200 w-100-p" fxLayout="column wrap" fxLayoutAlign="space-around center">
+                            <div class="h3 secondary-text" style="    font-family: Segoe UI;
+                            font-size: 21px;
+                            font-weight: bold;color: #5A5757;">Impressions</div>
+                       
+
+                            <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
+                                <div class="pr-16">
+                                
+                                    <div class="font-size-54 font-weight-300 line-height-1 mt-8">
+                                        {{widgets.widget3.impressions.value}}
+                                    </div>
+                                </div>
+                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg"
+                                     *ngIf="widgets.widget3.impressions.ofTarget > 0">
+                                    <mat-icon class="green-fg mr-4">trending_up</mat-icon>
+                                    <span>{{widgets.widget3.impressions.ofTarget}}%</span>
+                                </div>
+                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg"
+                                     *ngIf="widgets.widget3.impressions.ofTarget < 0">
+                                    <mat-icon class="red-fg mr-4">trending_down</mat-icon>
+                                    <span>{{widgets.widget3.impressions.ofTarget}}%</span>
+                                </div>
+                                <div class="ml-4 text-nowrap">of target</div>
+                            </div>
+
+                        </div>
+
+                    
+
+                    </div>
+
+                </div>
+                <!-- / Widget 3 -->
+
+                <!-- Widget 4 -->
+                <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+
+                    <div class="fuse-card auto-width mb-32" [ngClass.gt-sm]="'mb-0 mr-32'" style="border-radius: 2em;" >
+
+                        <div class="p-16 pb-0 h-200 w-100-p" fxLayout="column wrap" fxLayoutAlign="space-around center">
+                            <div class="h3 secondary-text" style="    font-family: Segoe UI;
+                            font-size: 21px;
+                            font-weight: bold;color: #5A5757;">Visits</div>
+                       
+
+                            <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
+                                <div class="pr-16">
+                                
+                                    <div class="font-size-54 font-weight-300 line-height-1 mt-8">
+                                        {{widgets.widget4.visits.value}}
+                                    </div>
+                                </div>
+                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg"
+                                     *ngIf="widgets.widget4.visits.ofTarget > 0">
+                                    <mat-icon class="green-fg mr-4">trending_up</mat-icon>
+                                    <span>{{widgets.widget4.visits.ofTarget}}%</span>
+                                </div>
+                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg"
+                                     *ngIf="widgets.widget4.visits.ofTarget < 0">
+                                    <mat-icon class="red-fg mr-4">trending_down</mat-icon>
+                                    <span>{{widgets.widget4.visits.ofTarget}}%</span>
+                                </div>
+                                <div class="ml-4 text-nowrap">of target</div>
+                            </div>
+
+                        </div>
+
+                    
+
+                    </div>
+
+                </div>
+                <!-- / Widget 4 -->
+
+            </div>
+
+            <!-- Widget 5 -->
+      
+            <div fxLayout="column" fxLayoutAlign="space-around center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
+                <div class="fuse-card auto-width" style="width: 70%;">
+
+                    <div class="position-relative p-24"
+                         fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayout="column" fxLayoutAlign="start start">
+                            <span class="h2">Suivi de Transactions</span>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <div class="py-8 px-12 border-radius-2 line-height-1 mr-8 cursor-pointer"
+                                 (click)="widget5SelectedDay = 'yesterday'"
+                                 [ngClass]="{'accent': widget5SelectedDay === 'yesterday'}">
+                                Yesterday
+                            </div>
+                            <div class="py-8 px-12 border-radius-2 line-height-1 mr-8 cursor-pointer"
+                                 (click)="widget5SelectedDay = 'today'"
+                                 [ngClass]="{'accent': widget5SelectedDay === 'today'}">
+                                Today
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="position-relative h-368 pb-16">
+                        <canvas baseChart
+                                [datasets]="widgets.widget5.datasets[widget5SelectedDay]"
+                                [labels]="widgets.widget5.labels"
+                                [colors]="widgets.widget5.colors"
+                                [options]="widgets.widget5.options"
+                                [chartType]="widgets.widget5.chartType">
+                        </canvas>
+                    </div>
+    
+                </div>
+                <div class="">
+                    <div class="" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
+    
+                 
+
+                        <div class="fuse-card" style="border-top-right-radius: 15px;
+                        border-top-left-radius: 15px;max-width: 403px;
+                                                                min-width: 320px;
+                                                               
+                                                                 margin-left: 1em;">
+    
+                            <div class="light-blue-600" style="border-top-right-radius: 15px;
+                            border-top-left-radius: 15px;">
+    
+                                <div class="p-16" fxLayout="row" fxLayoutAlign="space-between center">
+                                    <div class="pr-16" >
+                                        <div class="h1 font-weight-300" style="font-weight: bold;
+                                        font-size: 25px;
+                                        text-align: center;
+                                        font-family: Segoe UI;">Chiffre d'affaires 
+                                            des transactions</div>
+                                      
+                                    </div>
+    
+                                 
+                                </div>
+    
+                                <div class="p-16 pt-8" fxLayout="row" fxLayoutAlign="space-between end">
+                                    <div class="font-size-48 font-weight-300 line-height-1">{{widgets.widget8.today}}</div>
+                                    <div fxLayout="row" fxLayoutAlign="start center">
+                                        <mat-icon *ngIf="widgets.widget8.change.value > 0">trending_up</mat-icon>
+                                        <mat-icon *ngIf="widgets.widget8.change.value < 0">trending_down</mat-icon>
+                                        <div class="ml-8">{{widgets.widget8.change.value}}
+                                            ({{widgets.widget8.change.percentage}}%)
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <mat-tab-group backgroundColor="accent">
+                                <mat-tab label="1DAY">
+                                    <div class="h-200 my-16">
+                                        <ngx-charts-line-chart
+                                            *fuseIfOnDom
+                                            [scheme]="widgets.widget8.scheme"
+                                            [results]="widgets.widget8.data"
+                                            [xAxis]="false"
+                                            [yAxis]="true"
+                                            [yScaleMin]="widgets.widget8.dataMin"
+                                            [yScaleMax]="widgets.widget8.dataMax">
+                                        </ngx-charts-line-chart>
+                                    </div>
+                                </mat-tab>
+    
+                                <mat-tab label="1WEEK">
+                                    <div class="h-200 my-16">
+                                        <ngx-charts-line-chart
+                                            *fuseIfOnDom
+                                            [scheme]="widgets.widget8.scheme"
+                                            [results]="widgets.widget8.data"
+                                            [xAxis]="false"
+                                            [yAxis]="true"
+                                            [yScaleMin]="widgets.widget8.dataMin"
+                                            [yScaleMax]="widgets.widget8.dataMax">
+                                        </ngx-charts-line-chart>
+                                    </div>
+                                </mat-tab>
+    
+                                <mat-tab label="1MONTH">
+                                    <div class="h-200 my-16">
+                                        <ngx-charts-line-chart
+                                            *fuseIfOnDom
+                                            [scheme]="widgets.widget8.scheme"
+                                            [results]="widgets.widget8.data"
+                                            [xAxis]="false"
+                                            [yAxis]="true"
+                                            [yScaleMin]="widgets.widget8.dataMin"
+                                            [yScaleMax]="widgets.widget8.dataMax">
+                                        </ngx-charts-line-chart>
+                                    </div>
+                                </mat-tab>
+                            </mat-tab-group>
+    
+                        </div>
+    
+                    </div>
+                </div>
+               
+            </div>
+           
+            <!-- / Widget 5 -->
+
+         
+
+                
+    
+            
+
+         
+
+        </div>
+
+     
+
+    </div>
+
+</div>
