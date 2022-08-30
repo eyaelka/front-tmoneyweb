@@ -17,27 +17,17 @@
                         <div class="p-16 pb-0 h-200 w-100-p" fxLayout="column wrap" fxLayoutAlign="space-around center">
                             <div class="h3 secondary-text" style="    font-family: Segoe UI;
                             font-size: 21px;
-                            font-weight: bold;color: #5A5757;">Conversion</div>
+                            font-weight: bold;color: #5A5757;">Nombre de Stagiaire</div>
                        
 
                             <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
                                 <div class="pr-16">
                                 
                                     <div class="font-size-54 font-weight-300 line-height-1 mt-8">
-                                        {{widgets.widget2.conversion.value}}
+                                        150
                                     </div>
                                 </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg"
-                                     *ngIf="widgets.widget2.conversion.ofTarget > 0">
-                                    <mat-icon class="green-fg mr-4">trending_up</mat-icon>
-                                    <span>{{widgets.widget2.conversion.ofTarget}}%</span>
-                                </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg"
-                                     *ngIf="widgets.widget2.conversion.ofTarget < 0">
-                                    <mat-icon class="red-fg mr-4">trending_down</mat-icon>
-                                    <span>{{widgets.widget2.conversion.ofTarget}}%</span>
-                                </div>
-                                <div class="ml-4 text-nowrap">of target</div>
+                              
                             </div>
 
                         </div>
@@ -56,27 +46,17 @@
                         <div class="p-16 pb-0 h-200 w-100-p" fxLayout="column wrap" fxLayoutAlign="space-around center">
                             <div class="h3 secondary-text" style="    font-family: Segoe UI;
                             font-size: 21px;
-                            font-weight: bold;color: #5A5757;">Impressions</div>
+                            font-weight: bold;color: #5A5757;">Nombre de Manager</div>
                        
 
                             <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
                                 <div class="pr-16">
                                 
                                     <div class="font-size-54 font-weight-300 line-height-1 mt-8">
-                                        {{widgets.widget3.impressions.value}}
+                                        20
                                     </div>
                                 </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg"
-                                     *ngIf="widgets.widget3.impressions.ofTarget > 0">
-                                    <mat-icon class="green-fg mr-4">trending_up</mat-icon>
-                                    <span>{{widgets.widget3.impressions.ofTarget}}%</span>
-                                </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg"
-                                     *ngIf="widgets.widget3.impressions.ofTarget < 0">
-                                    <mat-icon class="red-fg mr-4">trending_down</mat-icon>
-                                    <span>{{widgets.widget3.impressions.ofTarget}}%</span>
-                                </div>
-                                <div class="ml-4 text-nowrap">of target</div>
+                                
                             </div>
 
                         </div>
@@ -87,7 +67,6 @@
 
                 </div>
                 <!-- / Widget 3 -->
-
                 <!-- Widget 4 -->
                 <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
 
@@ -96,27 +75,18 @@
                         <div class="p-16 pb-0 h-200 w-100-p" fxLayout="column wrap" fxLayoutAlign="space-around center">
                             <div class="h3 secondary-text" style="    font-family: Segoe UI;
                             font-size: 21px;
-                            font-weight: bold;color: #5A5757;">Visits</div>
+                            font-weight: bold;color: #5A5757;">Nombre d'Encadrant</div>
                        
 
                             <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
                                 <div class="pr-16">
                                 
                                     <div class="font-size-54 font-weight-300 line-height-1 mt-8">
-                                        {{widgets.widget4.visits.value}}
+                                        30
                                     </div>
                                 </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg"
-                                     *ngIf="widgets.widget4.visits.ofTarget > 0">
-                                    <mat-icon class="green-fg mr-4">trending_up</mat-icon>
-                                    <span>{{widgets.widget4.visits.ofTarget}}%</span>
-                                </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg"
-                                     *ngIf="widgets.widget4.visits.ofTarget < 0">
-                                    <mat-icon class="red-fg mr-4">trending_down</mat-icon>
-                                    <span>{{widgets.widget4.visits.ofTarget}}%</span>
-                                </div>
-                                <div class="ml-4 text-nowrap">of target</div>
+                                
+                               
                             </div>
 
                         </div>
@@ -129,6 +99,150 @@
                 <!-- / Widget 4 -->
 
             </div>
+
+            <div fxLayout="column" fxLayoutAlign="space-around center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
+                <!-- Widget 7 -->
+                <div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
+
+                    <div class="fuse-card">
+
+                        <div class="p-16">
+                            <div class="h1 font-weight-300">Sessions by device</div>
+                        </div>
+
+                        <div class="h-200">
+                            <ngx-charts-pie-chart
+                                *fuseIfOnDom
+                                [scheme]="widgets.widget7.scheme"
+                                [results]="widgets.widget7.devices"
+                                [doughnut]="true">
+                            </ngx-charts-pie-chart>
+                        </div>
+
+                        <div class="p-16" fxLayout="row" fxLayoutAlign="center center">
+
+                            <div class="px-16" fxLayout="column" fxLayoutAlign="start center"
+                                 *ngFor="let device of widgets.widget7.devices">
+
+                                <div class="h4 secondary-text">{{device.name}}</div>
+                                <div class="h2 font-weight-300 py-8">{{device.value}}%</div>
+
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <mat-icon class="s-18 pr-4 red-fg"
+                                              *ngIf="device.change < 0">
+                                        arrow_downward
+                                    </mat-icon>
+
+                                    <mat-icon class="s-18 pr-4 green-fg"
+                                              *ngIf="device.change > 0">
+                                        arrow_upward
+                                    </mat-icon>
+
+                                    <div class="h5 red-fg"
+                                         [ngClass]="{'red-fg': device.change < 0, 'green-fg': device.change > 0}">
+                                        {{device.change}}%
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card-divider mb-0"></div>
+
+                        <div class="px-16" fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-form-field>
+                                <mat-select class="simplified" value="7days">
+                                    <mat-option value="today">Today</mat-option>
+                                    <mat-option value="yesterday">Yesterday</mat-option>
+                                    <mat-option value="7days">Last 7 days</mat-option>
+                                    <mat-option value="28days">Last 28 days</mat-option>
+                                    <mat-option value="90days">Last 90 days</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <button mat-button color="accent">OVERVIEW</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- / Widget 7 -->
+                <!-- Widget 7 -->
+                <div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
+
+                    <div class="fuse-card">
+
+                        <div class="p-16">
+                            <div class="h1 font-weight-300">Sessions by device</div>
+                        </div>
+
+                        <div class="h-200">
+                            <ngx-charts-pie-chart
+                                *fuseIfOnDom
+                                [scheme]="widgets.widget7.scheme"
+                                [results]="widgets.widget7.devices"
+                                [doughnut]="true">
+                            </ngx-charts-pie-chart>
+                        </div>
+
+                        <div class="p-16" fxLayout="row" fxLayoutAlign="center center">
+
+                            <div class="px-16" fxLayout="column" fxLayoutAlign="start center"
+                                 *ngFor="let device of widgets.widget7.devices">
+
+                                <div class="h4 secondary-text">{{device.name}}</div>
+                                <div class="h2 font-weight-300 py-8">{{device.value}}%</div>
+
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <mat-icon class="s-18 pr-4 red-fg"
+                                              *ngIf="device.change < 0">
+                                        arrow_downward
+                                    </mat-icon>
+
+                                    <mat-icon class="s-18 pr-4 green-fg"
+                                              *ngIf="device.change > 0">
+                                        arrow_upward
+                                    </mat-icon>
+
+                                    <div class="h5 red-fg"
+                                         [ngClass]="{'red-fg': device.change < 0, 'green-fg': device.change > 0}">
+                                        {{device.change}}%
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card-divider mb-0"></div>
+
+                        <div class="px-16" fxLayout="row" fxLayoutAlign="space-between center">
+                            <mat-form-field>
+                                <mat-select class="simplified" value="7days">
+                                    <mat-option value="today">Today</mat-option>
+                                    <mat-option value="yesterday">Yesterday</mat-option>
+                                    <mat-option value="7days">Last 7 days</mat-option>
+                                    <mat-option value="28days">Last 28 days</mat-option>
+                                    <mat-option value="90days">Last 90 days</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <button mat-button color="accent">OVERVIEW</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- / Widget 7 -->
+
+            </div>
+
+                
+
+
+
+
 
             <!-- Widget 5 -->
       
